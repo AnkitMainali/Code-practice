@@ -2,8 +2,8 @@
 using namespace std;
 
 int removeElement(int nums[], int size, int val) {
-    int i=0;
-    for (int i=0;i < size;i++) {
+    int i;
+    for (i=0;i < size;i++) {
         if (nums[i] == val) {
             nums[i] = nums[size - 1];
             size--;
