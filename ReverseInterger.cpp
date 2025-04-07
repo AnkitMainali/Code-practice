@@ -1,34 +1,20 @@
 #include <iostream>
 using namespace std;
+int missingNumber(int nums[], int n) {
+    int expected_sum = n * (n + 1) / 2;
+    int actual_sum = 0;
 
-void reverseString(char s[], int size) {
-    int left = 0;
-    int right = size - 1;
-
-    while (left < right) {
-        // Swap characters
-        char temp = s[left];
-        s[left] = s[right];
-        s[right] = temp;
-
-        left++;
-        right--;
+    for (int i = 0; i < n; ++i) {
+        actual_sum += nums[i];
     }
+
+    return expected_sum - actual_sum;
 }
 
 int main() {
-    // Example input
-    char s[] = {'h', 'e', 'l', 'l', 'o'};
-    int size = sizeof(s) / sizeof(s[0]);
-
-    reverseString(s, size);
-
-    // Output the reversed array
-    cout << "Reversed string: ";
-    for (int i = 0; i < size; ++i) {
-        cout << s[i];
-    }
-    cout << endl;
-
+    int nums[] = {3, 0, 1, 4};
+    int n = sizeof(nums) / sizeof(nums[0]);  // Number of elements in the array
+    int missingNumber(nums[],n);
+    cout << "The missing number is: " << missingNumber(nums, n); 
     return 0;
 }
